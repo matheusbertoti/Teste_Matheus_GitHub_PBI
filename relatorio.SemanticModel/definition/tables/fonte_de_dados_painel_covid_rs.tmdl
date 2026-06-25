@@ -2,10 +2,9 @@ table fonte_de_dados_painel_covid_rs
 	lineageTag: 9e97f1b9-2d47-45d0-8bc6-362e4ffa3d93
 
 	column COD_IBGE
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 6661fc4e-ed07-4a93-98a6-42ce8e2a0751
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: COD_IBGE
 
 		annotation SummarizationSetBy = Automatic
@@ -19,10 +18,9 @@ table fonte_de_dados_painel_covid_rs
 		annotation SummarizationSetBy = Automatic
 
 	column COD_REGIAO_COVID
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 18357a74-194c-4c90-a969-0737b3c69ff1
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: COD_REGIAO_COVID
 
 		annotation SummarizationSetBy = Automatic
@@ -60,36 +58,48 @@ table fonte_de_dados_painel_covid_rs
 		annotation SummarizationSetBy = Automatic
 
 	column DATA_CONFIRMACAO
-		dataType: string
+		dataType: dateTime
+		formatString: Long Date
 		lineageTag: 01afefbd-6301-472d-a551-69187c43ffcc
 		summarizeBy: none
 		sourceColumn: DATA_CONFIRMACAO
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column DATA_SINTOMAS
-		dataType: string
+		dataType: dateTime
+		formatString: Long Date
 		lineageTag: bcf4c766-53c0-458c-83d2-e0b240ff5d92
 		summarizeBy: none
 		sourceColumn: DATA_SINTOMAS
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column DATA_INCLUSAO
-		dataType: string
+		dataType: dateTime
+		formatString: Long Date
 		lineageTag: a5d095f9-9a2e-48f2-a50c-09195804aac5
 		summarizeBy: none
 		sourceColumn: DATA_INCLUSAO
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column DATA_EVOLUCAO
-		dataType: string
+		dataType: dateTime
+		formatString: Long Date
 		lineageTag: 20a225c4-6bc3-49b3-9428-32c3ab8ab028
 		summarizeBy: none
 		sourceColumn: DATA_EVOLUCAO
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column EVOLUCAO
 		dataType: string
@@ -164,20 +174,26 @@ table fonte_de_dados_painel_covid_rs
 		annotation SummarizationSetBy = Automatic
 
 	column DATA_INCLUSAO_OBITO
-		dataType: string
+		dataType: dateTime
+		formatString: Long Date
 		lineageTag: 1df79607-35c3-4486-a549-436af702a205
 		summarizeBy: none
 		sourceColumn: DATA_INCLUSAO_OBITO
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column DATA_EVOLUCAO_ESTIMADA
-		dataType: string
+		dataType: dateTime
+		formatString: Long Date
 		lineageTag: a8462143-262b-4a4b-a067-e729114735e5
 		summarizeBy: none
 		sourceColumn: DATA_EVOLUCAO_ESTIMADA
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column RACA_COR
 		dataType: string
@@ -249,9 +265,10 @@ table fonte_de_dados_painel_covid_rs
 				let
 				  Source = Csv.Document(File.Contents("C:\Users\mathe\Área de Trabalho\fonte_de_dados_painel_covid_rs.csv"), [Delimiter = ";", Columns = 30, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
 				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
-				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"COD_IBGE", Int64.Type}, {"MUNICIPIO", type text}, {"COD_REGIAO_COVID", Int64.Type}, {"REGIAO_COVID", type text}, {"SEXO", type text}, {"FAIXAETARIA", type text}, {"CRITERIO", type text}, {"DATA_CONFIRMACAO", type text}, {"DATA_SINTOMAS", type text}, {"DATA_INCLUSAO", type text}, {"DATA_EVOLUCAO", type text}, {"EVOLUCAO", type text}, {"HOSPITALIZADO", type text}, {"FEBRE", type text}, {"TOSSE", type text}, {"GARGANTA", type text}, {"DISPNEIA", type text}, {"OUTROS", type text}, {"CONDICOES", type text}, {"GESTANTE", type text}, {"DATA_INCLUSAO_OBITO", type text}, {"DATA_EVOLUCAO_ESTIMADA", type text}, {"RACA_COR", type text}, {"ETNIA_INDIGENA", type text}, {"PROFISSIONAL_SAUDE", type text}, {"BAIRRO", type text}, {"SRAG", type text}, {"FONTE_INFORMACAO", type text}, {"PAIS_NASCIMENTO", type text}, {"PES_PRIV_LIBERDADE", type text}}, "en-US")
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"COD_IBGE", Int64.Type}, {"MUNICIPIO", type text}, {"COD_REGIAO_COVID", Int64.Type}, {"REGIAO_COVID", type text}, {"SEXO", type text}, {"FAIXAETARIA", type text}, {"CRITERIO", type text}, {"DATA_CONFIRMACAO", type text}, {"DATA_SINTOMAS", type text}, {"DATA_INCLUSAO", type text}, {"DATA_EVOLUCAO", type text}, {"EVOLUCAO", type text}, {"HOSPITALIZADO", type text}, {"FEBRE", type text}, {"TOSSE", type text}, {"GARGANTA", type text}, {"DISPNEIA", type text}, {"OUTROS", type text}, {"CONDICOES", type text}, {"GESTANTE", type text}, {"DATA_INCLUSAO_OBITO", type text}, {"DATA_EVOLUCAO_ESTIMADA", type text}, {"RACA_COR", type text}, {"ETNIA_INDIGENA", type text}, {"PROFISSIONAL_SAUDE", type text}, {"BAIRRO", type text}, {"SRAG", type text}, {"FONTE_INFORMACAO", type text}, {"PAIS_NASCIMENTO", type text}, {"PES_PRIV_LIBERDADE", type text}}, "en-US"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Changed column type",{{"COD_IBGE", type text}, {"COD_REGIAO_COVID", type text}, {"DATA_CONFIRMACAO", type date}, {"DATA_SINTOMAS", type date}, {"DATA_INCLUSAO", type date}, {"DATA_EVOLUCAO", type date}, {"DATA_INCLUSAO_OBITO", type date}, {"DATA_EVOLUCAO_ESTIMADA", type date}})
 				in
-				  #"Changed column type"
+				  #"Changed Type"
 
 	annotation PBI_NavigationStepName = Navigation
 
