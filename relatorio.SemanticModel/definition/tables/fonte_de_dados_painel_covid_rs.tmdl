@@ -1,0 +1,259 @@
+table fonte_de_dados_painel_covid_rs
+	lineageTag: 9e97f1b9-2d47-45d0-8bc6-362e4ffa3d93
+
+	column COD_IBGE
+		dataType: int64
+		formatString: 0
+		lineageTag: 6661fc4e-ed07-4a93-98a6-42ce8e2a0751
+		summarizeBy: sum
+		sourceColumn: COD_IBGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MUNICIPIO
+		dataType: string
+		lineageTag: b3a5e6c1-05a8-4598-b5fe-b556173a1e7d
+		summarizeBy: none
+		sourceColumn: MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_REGIAO_COVID
+		dataType: int64
+		formatString: 0
+		lineageTag: 18357a74-194c-4c90-a969-0737b3c69ff1
+		summarizeBy: count
+		sourceColumn: COD_REGIAO_COVID
+
+		annotation SummarizationSetBy = Automatic
+
+	column REGIAO_COVID
+		dataType: string
+		lineageTag: 272168b9-6885-4f99-931c-3c20b285e49e
+		summarizeBy: none
+		sourceColumn: REGIAO_COVID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEXO
+		dataType: string
+		lineageTag: 9e87c50f-3d80-4f3a-91c2-893c1d49949a
+		summarizeBy: none
+		sourceColumn: SEXO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FAIXAETARIA
+		dataType: string
+		lineageTag: 1cb0272d-6b5f-44ed-b320-11fb44034999
+		summarizeBy: none
+		sourceColumn: FAIXAETARIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CRITERIO
+		dataType: string
+		lineageTag: f9fbd804-ef75-4b6d-958d-995ee3331076
+		summarizeBy: none
+		sourceColumn: CRITERIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_CONFIRMACAO
+		dataType: string
+		lineageTag: 01afefbd-6301-472d-a551-69187c43ffcc
+		summarizeBy: none
+		sourceColumn: DATA_CONFIRMACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_SINTOMAS
+		dataType: string
+		lineageTag: bcf4c766-53c0-458c-83d2-e0b240ff5d92
+		summarizeBy: none
+		sourceColumn: DATA_SINTOMAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_INCLUSAO
+		dataType: string
+		lineageTag: a5d095f9-9a2e-48f2-a50c-09195804aac5
+		summarizeBy: none
+		sourceColumn: DATA_INCLUSAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_EVOLUCAO
+		dataType: string
+		lineageTag: 20a225c4-6bc3-49b3-9428-32c3ab8ab028
+		summarizeBy: none
+		sourceColumn: DATA_EVOLUCAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column EVOLUCAO
+		dataType: string
+		lineageTag: 1cd21d84-89b9-41c6-b96d-8ae50c41ca08
+		summarizeBy: none
+		sourceColumn: EVOLUCAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column HOSPITALIZADO
+		dataType: string
+		lineageTag: 2d9f45e4-ef32-4a5f-8e72-25ace6b23639
+		summarizeBy: none
+		sourceColumn: HOSPITALIZADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FEBRE
+		dataType: string
+		lineageTag: c603d69a-f48b-40e6-998f-5251a930ed42
+		summarizeBy: none
+		sourceColumn: FEBRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOSSE
+		dataType: string
+		lineageTag: 408901e6-b022-476d-b945-0fb191df8a14
+		summarizeBy: none
+		sourceColumn: TOSSE
+
+		annotation SummarizationSetBy = Automatic
+
+	column GARGANTA
+		dataType: string
+		lineageTag: 60fb2601-40f8-44bf-b6fc-3ea8b005385f
+		summarizeBy: none
+		sourceColumn: GARGANTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISPNEIA
+		dataType: string
+		lineageTag: c8774be8-09a6-4884-a17f-fba26de6af6d
+		summarizeBy: none
+		sourceColumn: DISPNEIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column OUTROS
+		dataType: string
+		lineageTag: 58776326-fc9a-4a56-9af7-b886eb612413
+		summarizeBy: none
+		sourceColumn: OUTROS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONDICOES
+		dataType: string
+		lineageTag: d409843a-7f42-409e-b5fd-fa94d6741036
+		summarizeBy: none
+		sourceColumn: CONDICOES
+
+		annotation SummarizationSetBy = Automatic
+
+	column GESTANTE
+		dataType: string
+		lineageTag: 1045ae13-e500-4ac8-8f20-361e4c383a4a
+		summarizeBy: none
+		sourceColumn: GESTANTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_INCLUSAO_OBITO
+		dataType: string
+		lineageTag: 1df79607-35c3-4486-a549-436af702a205
+		summarizeBy: none
+		sourceColumn: DATA_INCLUSAO_OBITO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_EVOLUCAO_ESTIMADA
+		dataType: string
+		lineageTag: a8462143-262b-4a4b-a067-e729114735e5
+		summarizeBy: none
+		sourceColumn: DATA_EVOLUCAO_ESTIMADA
+
+		annotation SummarizationSetBy = Automatic
+
+	column RACA_COR
+		dataType: string
+		lineageTag: d06a03ad-bf0f-443c-9bef-91e251ad4ade
+		summarizeBy: none
+		sourceColumn: RACA_COR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETNIA_INDIGENA
+		dataType: string
+		lineageTag: c1220755-2009-4a64-a6e2-d22a79387a12
+		summarizeBy: none
+		sourceColumn: ETNIA_INDIGENA
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROFISSIONAL_SAUDE
+		dataType: string
+		lineageTag: 99426af0-532f-4a2b-9100-3689c8c3f7ff
+		summarizeBy: none
+		sourceColumn: PROFISSIONAL_SAUDE
+
+		annotation SummarizationSetBy = Automatic
+
+	column BAIRRO
+		dataType: string
+		lineageTag: e1e2d1e5-2f14-4394-982c-ffbaa15044ca
+		summarizeBy: none
+		sourceColumn: BAIRRO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SRAG
+		dataType: string
+		lineageTag: b12d0355-dc2c-4e40-b2e9-3c12e035f777
+		summarizeBy: none
+		sourceColumn: SRAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column FONTE_INFORMACAO
+		dataType: string
+		lineageTag: 80039001-df49-479c-a947-fd6c40481c02
+		summarizeBy: none
+		sourceColumn: FONTE_INFORMACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAIS_NASCIMENTO
+		dataType: string
+		lineageTag: 6dbcef6e-bdd7-4b50-b7b8-764980f50e7b
+		summarizeBy: none
+		sourceColumn: PAIS_NASCIMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PES_PRIV_LIBERDADE
+		dataType: string
+		lineageTag: 1cbe903f-3132-4852-80b6-e4408b52432a
+		summarizeBy: none
+		sourceColumn: PES_PRIV_LIBERDADE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fonte_de_dados_painel_covid_rs = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Users\mathe\Área de Trabalho\fonte_de_dados_painel_covid_rs.csv"), [Delimiter = ";", Columns = 30, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"COD_IBGE", Int64.Type}, {"MUNICIPIO", type text}, {"COD_REGIAO_COVID", Int64.Type}, {"REGIAO_COVID", type text}, {"SEXO", type text}, {"FAIXAETARIA", type text}, {"CRITERIO", type text}, {"DATA_CONFIRMACAO", type text}, {"DATA_SINTOMAS", type text}, {"DATA_INCLUSAO", type text}, {"DATA_EVOLUCAO", type text}, {"EVOLUCAO", type text}, {"HOSPITALIZADO", type text}, {"FEBRE", type text}, {"TOSSE", type text}, {"GARGANTA", type text}, {"DISPNEIA", type text}, {"OUTROS", type text}, {"CONDICOES", type text}, {"GESTANTE", type text}, {"DATA_INCLUSAO_OBITO", type text}, {"DATA_EVOLUCAO_ESTIMADA", type text}, {"RACA_COR", type text}, {"ETNIA_INDIGENA", type text}, {"PROFISSIONAL_SAUDE", type text}, {"BAIRRO", type text}, {"SRAG", type text}, {"FONTE_INFORMACAO", type text}, {"PAIS_NASCIMENTO", type text}, {"PES_PRIV_LIBERDADE", type text}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
